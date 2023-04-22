@@ -51,7 +51,6 @@ const generateMermaid = () => {
     const argvs = getArgvs()
     const code = fs.readFileSync(argvs[0], { encoding: 'utf8' }).toString()
     const ast = parse(code) as any
-    // console.log('ast', recast.print( ast.program.body[0]).code)
     const mermaidComments: any[] = []
     recast.visit(ast, {
       visitClassMethod: function (self: any){
@@ -98,7 +97,6 @@ const generateMermaid = () => {
     })
 
     const res = mermaidComments.reduce((acc, item)=> {
-      console.log(item)
       const {request, summary, mermaid} = item
       let str = ` ## ${summary} ${request.method.toUpperCase()} ${request.url} \n`
 
@@ -113,7 +111,7 @@ const generateMermaid = () => {
       acc += str
       return acc
     }, '')
-
+    console.log(res)
     fs.writeFile(cwd + '/MERMAID.md', res , {}, function (err) {
     })
 
