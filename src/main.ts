@@ -1,46 +1,7 @@
 import fs from 'fs'
 import recast from 'recast'
-import parser from '@babel/parser'
-import { cwd, getArgvs } from './utils'
-
-function parse (code: string) {
-  try {
-    return parser.parse(code, {
-      sourceType: 'module',
-      plugins: ["typescript", "decorators-legacy"],
-    })
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-function parseOptGrammar(optGrammar: string) {
-  const match = optGrammar.match(/([a-zA-Z]+)|([^a-zA-Z]+)/g) || []
-  if(match.length > 1) {
-    return [match[0], match[1]]
-  } else return match
-}
-
-function matchMermaidGrammar (str: string) {
-  const pattern = /@m:\s*(\s*[^@]+)\s*(?:@return:\s*([^@]+))?/;
-  const match = str.match(pattern);
-  const sentences: any[] = []
-
-  if (match) {
-    const [key, value] = match[1].split(':')
-
-    const [opt, target] = parseOptGrammar(key)
-    if(target) {
-      sentences.push(`BFF${opt}${target}: ${value}`)
-    } else sentences.push(`${opt} ${value ?? ''}`)
-   
-    if (match[2]) {
-      sentences.push(`${target}-->BFF: ${match[2]}`)
-    }
-  }
-
-  return sentences
-}
+import { getArgvs, matchMermaidGrammar, parse } from './utils'
+import path from 'path'
 
 const StartGrammar = `
   sequenceDiagram
@@ -111,8 +72,9 @@ const generateMermaid = () => {
       acc += str
       return acc
     }, '')
-    console.log(res)
-    fs.writeFile(cwd + '/MERMAID.md', res , {}, function (err) {
+
+    fs.writeFile(path.join(path.dirname(argvs[0]), '..', 'MERMAID.md'), res , {}, function (err) {
+      
     })
 
 }

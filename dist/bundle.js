@@ -1,6 +1,7 @@
 import fs from 'fs';
 import recast from 'recast';
 import parser from '@babel/parser';
+import path from 'path';
 
 const getArgvs = () => [...process.argv].splice(2).map(item => {
     if (item.substr(item.length - 1) === '/') {
@@ -8,8 +9,6 @@ const getArgvs = () => [...process.argv].splice(2).map(item => {
     }
     return item;
 });
-const cwd = process.cwd() + '/';
-
 function parse(code) {
     try {
         return parser.parse(code, {
@@ -30,7 +29,7 @@ function parseOptGrammar(optGrammar) {
         return match;
 }
 function matchMermaidGrammar(str) {
-    const pattern = /@m:\s*(\s*[^@]+)\s*(?:@return:\s*([^@]+))?/;
+    const pattern = /@mc:\s*(\s*[^@]+)\s*(?:@return:\s*([^@]+))?/;
     const match = str.match(pattern);
     const sentences = [];
     if (match) {
@@ -42,11 +41,12 @@ function matchMermaidGrammar(str) {
         else
             sentences.push(`${opt} ${value ?? ''}`);
         if (match[2]) {
-            sentences.push(`${target}-->BFF: ${match[2]}`);
+            sentences.push(`${target}-->>BFF: ${match[2]}`);
         }
     }
     return sentences;
 }
+
 const StartGrammar = `
   sequenceDiagram
     Client->>BFF: 发起查询请求
@@ -107,8 +107,7 @@ const generateMermaid = () => {
         acc += str;
         return acc;
     }, '');
-    console.log(res);
-    fs.writeFile(cwd + '/MERMAID.md', res, {}, function (err) {
+    fs.writeFile(path.join(path.dirname(argvs[0]), '..', 'MERMAID.md'), res, {}, function (err) {
     });
 };
 
