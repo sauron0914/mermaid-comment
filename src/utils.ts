@@ -1,4 +1,26 @@
 import parser from '@babel/parser'
+import fs from 'fs'
+
+export const traverseFile: (src: string, callback: (path: string) => void) => void = (
+  src,
+  callback,
+) => {
+  let paths = fs.readdirSync(src).filter(item => item !== 'node_modules')
+  paths.forEach(path => {
+    const _src = src + '/' + path
+    try {
+      const statSyncRes = fs.statSync(_src)
+      if (statSyncRes.isFile()) {
+        callback(_src)
+      } else if (statSyncRes.isDirectory()) {
+        //是目录则 递归
+        traverseFile(_src, callback)
+      }
+    } catch (error) {}
+  })
+}
+
+export const cwd = process.cwd() + '/'
 
 export const getArgvs = () =>
   [...process.argv].splice(2).map(item => {
@@ -46,4 +68,15 @@ export function matchMermaidGrammar (str: string) {
   }
 
   return sentences
+}
+
+export function matchPrefix(str: string) {
+  const regex = /@prefix\('([^']*)'\)/
+
+  const match = str.match(regex)
+
+  if (match) {
+    const result = match[1]
+    return result
+  } else return ''
 }
