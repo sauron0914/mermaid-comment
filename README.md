@@ -34,11 +34,11 @@ export default class AgencySchemeApplicationController extends Controller {
   @summary('创建代运维方案')
   async createApply (ctx: Context) {
     // TODO:
-    // @m:->>hulk: 获取userId 对应的 agentId  @return: 返回agentId
+    // @mc:->>hulk: 获取userId 对应的 agentId  @return: 返回agentId
     const { agentId } = await this.hulk.getAgentId(userId)
-    // @m:par: 遍历处理子方案数据
+    // @mc:par: 遍历处理子方案数据
     // ...your code
-    // @m:->>agent: 请求代理商信息  @return: 返回代理商信息
+    // @mc:->>agent: 请求代理商信息  @return: 返回代理商信息
     /**
      *  ...your code
     */
@@ -47,13 +47,13 @@ export default class AgencySchemeApplicationController extends Controller {
       ...validatedBody,
       curLoginUserId: getUserId(ctx),
     })
-    // @m:and: 处理其他事项
-    // @m:->>windrunner: 检查主方案是否能够发起变更 @return: 返回bool值
-    // @m:and: 处理其他事项2
-    // @m:->>BFF: 组装子方案数据
-    // @m:end
-    // @m:->>BFF: 组装主方案数据
-    // @m:->>Client: 返回组装后的数据
+    // @mc:and: 处理其他事项
+    // @mc:->>windrunner: 检查主方案是否能够发起变更 @return: 返回bool值
+    // @mc:and: 处理其他事项2
+    // @mc:->>BFF: 组装子方案数据
+    // @mc:end
+    // @mc:->>BFF: 组装主方案数据
+    // @mc:->>Client: 返回组装后的数据
     ctx.toResponse.ok(data)
   }
 }
