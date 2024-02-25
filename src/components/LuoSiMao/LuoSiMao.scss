@@ -1,0 +1,13 @@
+.luosimao {
+  width: 100% !important;
+
+  > iframe {
+    width: 100% !important;
+  }
+
+  &.mock {
+    > iframe {
+      pointer-events: none;
+    }
+  }
+}

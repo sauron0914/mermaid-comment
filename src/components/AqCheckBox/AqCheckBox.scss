@@ -1,0 +1,17 @@
+.aq-check-box {
+    display: inline-block;
+    color: $font-lighter;
+    cursor: pointer;
+
+    &.checked {
+        color: $main;
+    }
+
+    &.partial {
+        color: $main;
+    }
+
+    .svg-tag {
+        width: size(16);
+    }
+}

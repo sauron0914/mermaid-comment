@@ -1,0 +1,93 @@
+.react-popper {
+    $bg: $white;
+    $border-color: $border;
+
+    $pseudoSize: size(6);
+    $shadow: 0 size(1) size(5) darken($bg, 20);
+
+    @mixin pseudo(
+        $bg: $border-color,
+        $direction: top,
+        $borderWidth: $pseudoSize
+    ) {
+        position: absolute;
+        #{$direction}: -$pseudoSize;
+        width: 0;
+        height: 0;
+        border: $borderWidth solid transparent;
+
+        @if ($direction==top) {
+            border-top: 0;
+            border-bottom-color: $bg;
+        } @else if ($direction==bottom) {
+            border-bottom: 0;
+            border-top-color: $bg;
+        } @else if ($direction==left) {
+            border-left: 0;
+            border-right-color: $bg;
+        } @else if ($direction==right) {
+            border-right: 0;
+            border-left-color: $bg;
+        }
+    }
+
+    z-index: $z-index-top;
+    margin: size(10) 0 0;
+    border-radius: $border-radius;
+    background: #fff;
+    box-shadow: $shadow;
+
+    &.force-show {
+        display: block !important;
+    }
+
+    &.show {
+        display: block;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    &.black {
+        background: $black;
+        color: $bg;
+
+        @each $placement, $arr-position, $pseudoPos in (top, bottom, left),
+            (bottom, top, left), (left, right, top), (right, left, top)
+        {
+            &[data-placement^='#{$placement}'] {
+                .arrow {
+                    @include pseudo($black, $arr-position);
+
+                    &:before {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.tool-tip {
+        padding: size(16) size(24);
+    }
+
+    @each $placement, $arr-position, $pseudoPos in (top, bottom, left),
+        (bottom, top, left), (left, right, top), (right, left, top)
+    {
+        &[data-placement^='#{$placement}'] {
+            margin-#{$arr-position}: size(10);
+
+            .arrow {
+                @include pseudo($border-color, $arr-position);
+
+                &:before {
+                    content: '';
+                    @include pseudo($bg, $arr-position);
+                    #{$pseudoPos}: -$pseudoSize;
+                    #{$arr-position}: 1px;
+                }
+            }
+        }
+    }
+}

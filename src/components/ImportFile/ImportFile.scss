@@ -1,0 +1,97 @@
+$file-show-color: #eff2f8;
+
+.import-file {
+    min-width: size(400);
+    padding: size(16) $padding-m $padding;
+    color: $black;
+    .agent-select-import {
+        width: size(200);
+        margin-bottom: size(10);
+    }
+}
+
+.import-file-upload {
+    @include flex();
+    > span:nth-child(1) {
+        @include flex(center);
+        position: relative;
+        width: size(100);
+        height: size(24);
+        padding: 0 size(5);
+        color: $secondary;
+        border: size(1) solid $secondary;
+        border-radius: size(16);
+        overflow: hidden;
+
+        i {
+            @include font-style(size(12));
+            padding-left: size(5);
+            font-style: normal;
+            //border-bottom: size(1) solid $main;
+        }
+
+        input {
+            position: absolute;
+            left: 0;
+            background: darkred;
+            height: size(24);
+            width: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+
+    > a:nth-child(2) {
+        @include font-style(size(12));
+        margin-left: size(20);
+        color: $secondary;
+        border-bottom: size(1) solid $secondary;
+        cursor: pointer;
+    }
+}
+
+.import-file-show {
+    @include flex();
+    margin: size(10) 0 size(30);
+
+    > span {
+        @include height(size(24));
+        flex: 1;
+        padding: 0 size(20);
+        border-radius: size(12);
+        background: $file-show-color;
+    }
+
+    .import-file-del-svg {
+        width: size(15);
+        margin-left: size(20);
+        color: $secondary;
+        cursor: pointer;
+    }
+}
+
+.import-file-choose {
+    margin: size(15) 0 $padding;
+}
+
+.import-file-desc {
+    color: $black-light;
+}
+
+.import-file-upload-svg {
+    width: size(15);
+}
+
+.import-file-handle {
+    @include flex(center, center);
+}
+
+.import-file-button {
+    &.involid {
+        background: $black-lighter;
+        border: size(1) solid $black-lighter;
+        &:hover {
+            border-color: $black-lighter;
+        }
+    }
+}

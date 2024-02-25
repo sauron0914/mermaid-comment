@@ -1,0 +1,100 @@
+.client-header {
+    width: 100%;
+    background: $main;
+}
+.client-header-box {
+    @include flex(space-between);
+    @include subhead();
+    width: 100%;
+    position: relative;
+    z-index: $z-index-middle;
+    height: $header-height;
+    padding: 0 size(20) 0 size(30);
+    color: $white;
+    box-shadow: 0 size(2) size(4) $shadow;
+    .client-header-title {
+        @include flex();
+        @include font-style(size(18));
+        .svg-tag {
+            width: size(25);
+            margin-right: size(10);
+        }
+        .client-header-company-name {
+            @include font-style(size(16));
+            margin-left: size(5);
+        }
+        .client-header-change-company {
+            @include font-style(size(12));
+            margin: 0 size(20);
+            padding: size(1) size(8);
+            border: size(1) solid $white;
+            border-radius: size(4);
+            cursor: pointer;
+        }
+        .client-header-company-list {
+            width: size(280);
+            color: $secondary;
+            .client-header-company-item {
+                @include font-style(size(14));
+                padding: size(10);
+                &:hover {
+                    background: $bg;
+                }
+            }
+        }
+    }
+    .right {
+        @include flex(center);
+        @include content();
+        color: $white;
+    }
+
+    .info {
+        cursor: pointer;
+    }
+
+    .btn {
+        @include flex(center);
+        position: relative;
+        border: none;
+
+        &:nth-last-child(2) {
+            margin: 0 0 0 size(10);
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 1px;
+                height: 1em;
+                margin: -0.5em 0 0;
+                background: $border;
+            }
+
+            &:after {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        .svg-tag {
+            width: 1.4em;
+            margin: 0 size(5) 0 0;
+        }
+    }
+
+    i {
+        @include height(size(18));
+        @include font-style(size(12));
+        position: absolute;
+        top: size(-2);
+        left: size(20);
+        padding: 0 size(8);
+        background: $secondary;
+        color: white;
+        border-radius: size(9);
+        font-style: normal;
+    }
+}

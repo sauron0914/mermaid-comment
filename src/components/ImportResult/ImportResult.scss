@@ -1,0 +1,56 @@
+.import-result {
+    min-width: size(680);
+    padding: size(16) size(32) $padding;
+}
+.import-result-error-title {
+    @include flex(center, center);
+    @include font-style(size(14));
+    color: $red;
+    .import-result-error-title-icon {
+        width: size(15);
+        margin-right: size(5);
+    }
+}
+.import-result-desc {
+    @include height(size(40));
+    color: $black;
+}
+.import-result-ul {
+    border: size(1) solid $border;
+    border-radius: size(4);
+    max-height: size(240);
+    overflow: auto;
+    li {
+        @include flex();
+        @include font-style(size(14));
+        @include height(size(40));
+        &:nth-child(2n + 1) {
+            background: $bg;
+        }
+        span {
+            padding: 0 size(10);
+            white-space: nowrap;
+            &:nth-last-child(1) {
+                border: 0;
+            }
+        }
+    }
+}
+.import-result-handle {
+    @include flex(center, center);
+    margin-top: $padding;
+    button:nth-child(2) {
+        margin-left: size(20);
+    }
+}
+
+.download-error {
+    @include height(size(32), size(30));
+    padding: 0 size(15);
+    color: $main;
+    border-radius: $border-radius;
+    &.download-error-fill {
+        color: white;
+        border-color: $main;
+    }
+}

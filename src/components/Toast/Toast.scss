@@ -1,0 +1,30 @@
+#toast {
+    @include flex-column(center, center);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: $z-index-top + 100;
+    width: 100vw;
+    margin: 0 0 0 -50vw;
+    overflow: visible;
+    pointer-events: none;
+
+    .toast-item {
+        @include flex(space-between);
+        line-height: size(48);
+        max-width: 90vw;
+        padding: 0 size(16);
+        margin: size(10) 0 0;
+        color: $font-light;
+        border-radius: $border-radius;
+        background: $white;
+        box-shadow: 0 size(2) size(10) $shadow;
+        pointer-events: initial;
+
+        .svg-tag {
+            display: inline-block;
+            width: size(16);
+            margin: 0 size(8) 0 0;
+        }
+    }
+}

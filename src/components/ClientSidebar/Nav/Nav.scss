@@ -1,0 +1,112 @@
+.client-sidebar .nav {
+    $custom-padding: size(20);
+
+    position: relative;
+    display: block;
+    padding: size(11.71) 0;
+    line-height: size(20);
+    color: $black-dark;
+    background: $white;
+    opacity: 1;
+    cursor: pointer;
+    .sub-routes {
+        font-size: size(14);
+        background: $bg-light;
+        .nav {
+            border-bottom: size(1) solid $border-light;
+            padding: size(9.5) 0;
+            height: size(40);
+            color: $black;
+            box-sizing: border-box;
+            background: $bg-light;
+            &:nth-child(1) {
+                border-top: size(1) solid $border-light;
+            }
+            &.active {
+                color: $main;
+                background: rgba($color: $main-lighter, $alpha: 0.2);
+            }
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+    &.no-link {
+        &:hover {
+            color: $font;
+            background: $white;
+        }
+    }
+    &:hover {
+        color: $main;
+        > .svg-tag {
+            color: $main;
+        }
+    }
+
+    &.has-children {
+        padding: 0;
+    }
+
+    &.active {
+        color: $main;
+        background: rgba($color: $main-lighter, $alpha: 0.2);
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: size(4);
+            border-radius: size(2);
+            background: $main;
+        }
+        > .svg-tag {
+            color: $main;
+        }
+    }
+    .is-activated {
+        color: $main;
+        > .svg-tag {
+            color: $main;
+        }
+    }
+    .expand-tag {
+        @include height(size(48));
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        padding-left: size(24);
+        &:hover {
+            color: $main;
+            .svg-tag {
+                color: $main;
+            }
+        }
+
+        &.expanded {
+            font-size: size(14);
+            > .svg-tag {
+                transform: translate(0, -50%) rotate(-90deg);
+            }
+        }
+
+        > .svg-tag {
+            position: absolute;
+            right: $custom-padding;
+            top: 50%;
+            transform: translate(0, -50%) rotate(90deg);
+            transition: all 0.5s ease;
+        }
+    }
+
+    .svg-tag {
+        width: 1.4em;
+        color: $black-dark;
+        &.icon {
+            position: relative;
+            top: 0.25em;
+            margin: 0 size(5) 0 0;
+        }
+    }
+}

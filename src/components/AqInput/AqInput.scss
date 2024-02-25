@@ -1,0 +1,58 @@
+.aq-input {
+  $padding-bottom: size(20);
+
+  position: relative;
+  width: 100%;
+  padding-bottom: $padding-bottom;
+
+  &.input-search {
+    display: inline-block;
+    width: 200px;
+    margin: 0 size(10) 0 0;
+
+    input.input {
+      @include height(size(32));
+    }
+  }
+
+  .label {
+    @include sub-content();
+    display: block;
+  }
+
+  input.input {
+    width: 100%;
+    height: $input-item-height;
+  }
+
+  .icon {
+    position: absolute;
+    bottom: calc(#{$padding-bottom} + #{$input-item-height} / 2);
+    padding: 0 size(8);
+    height: size(20);
+    color: $bg-dark;
+    transform: translate(0, 50%);
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      right: 0;
+    }
+  }
+
+  .error-text {
+    $bottom: size(2);
+
+    @include sub-content();
+    @include ellipsis(100%);
+    position: absolute;
+    left: 0;
+    bottom: $bottom;
+    line-height: calc(#{$padding-bottom} - #{$bottom});
+    color: $red;
+    white-space: nowrap;
+    user-select: none;
+  }
+}

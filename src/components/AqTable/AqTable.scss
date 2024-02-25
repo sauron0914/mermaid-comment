@@ -1,0 +1,126 @@
+.auraxy-table,
+.auraxy-table-fixed-head,
+.auraxy-table-fixed-left,
+.auraxy-table-fixed-right,
+.auraxy-table-content,
+.auraxy-table-left-content,
+.auraxy-table-right-content {
+    $font-light: #666;
+    $table-border-color: #eee;
+    $bg: #fff;
+    @function size($val) {
+        @return $val * 1px;
+    }
+
+    $th-height: size(30);
+    $td-height: size(34);
+
+    color: $font-light;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 0;
+    border-collapse: collapse;
+    font-size: size(14);
+
+    thead {
+        background: $bg;
+    }
+
+    tbody tr:nth-child(even) {
+        background: rgba($bg, 0.5);
+    }
+
+    th,
+    td {
+        padding: 0 size(10);
+        border-top: 1px solid $table-border-color;
+        border-bottom: 1px solid $table-border-color;
+        &:nth-child(1) {
+            border-left: 1px solid $table-border-color;
+        }
+        &:nth-last-child(1) {
+            border-right: 1px solid $table-border-color;
+        }
+    }
+
+    th {
+        font-size: size(12);
+        height: $th-height;
+        background: #f8f8f8;
+    }
+
+    td {
+        height: $td-height;
+    }
+
+    .auraxy-table-no-data {
+        text-align: center;
+    }
+}
+
+.auraxy-table-wrapper {
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 0 0 1px #eee inset;
+    overflow: hidden;
+}
+
+.auraxy-table-fixed-head-scroll-wrapper {
+    .ps__rail-y,
+    .ps__rail-x {
+        display: none !important;
+    }
+}
+
+.auraxy-table-fixed-head {
+    background: #fff;
+    overflow: hidden;
+}
+
+.auraxy-table-fixed-left,
+.auraxy-table-fixed-right {
+    position: absolute;
+    top: 0;
+    bottom: 1px;
+    left: 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.auraxy-table-fixed-left,
+.hide-scrollbar {
+    .ps__rail-y {
+        display: none !important;
+    }
+}
+
+.auraxy-table-fixed-head {
+    width: 100%;
+}
+
+.auraxy-table-fixed-right {
+    left: auto;
+    right: 0;
+}
+
+.auraxy-table-content,
+.auraxy-table-left-content,
+.auraxy-table-right-content {
+    margin-top: -1px;
+}
+
+.left-shadow {
+    box-shadow: 4px 0 4px -3px rgba(#000, 0.1);
+}
+
+.right-shadow {
+    box-shadow: -4px 0 4px -3px rgba(#000, 0.1);
+}
+
+.auraxy-table {
+    th,
+    td {
+        font-size: size(14);
+        height: $th-height;
+    }
+}

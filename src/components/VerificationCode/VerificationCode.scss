@@ -1,0 +1,16 @@
+.active-code-input {
+  @include font-style(remSize(22), bolder);
+  width: remSize(40);
+  height: remSize(40);
+  margin-right: remSize(20);
+  border: remSize(1) solid $black-light;
+  border-radius: remSize(4);
+  text-align: center;
+  appearance: none;
+  color: #333333;
+}
+.active-store {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

@@ -1,0 +1,23 @@
+.aq-tab {
+    @include flex();
+    @include height(size(36));
+    overflow: hidden;
+
+    &.common-tab {
+        .tab-item {
+            @include height(size(30));
+        }
+
+        .selected {
+            border-bottom: size(2) solid $secondary;
+            color: $secondary;
+        }
+    }
+
+    .tab-item {
+        flex: 1;
+        width: 0;
+        text-align: center;
+        cursor: pointer;
+    }
+}

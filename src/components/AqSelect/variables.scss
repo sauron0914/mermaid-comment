@@ -1,0 +1,99 @@
+$font: $font-light;
+$select: $main;
+$input-bg: #fff;
+$input-bg-disabled: #f9f9f9;
+$base-size: 10px;
+$option-hover-bg: rgba($main, 0.05);
+$option-select-bg: rgba($main, 0.05);
+$shadow: rgba(0, 0, 0, 0.1);
+$multi-value-color: #eee;
+
+@function size($factor) {
+    @return $factor * $base-size;
+}
+
+$option-height: size(3);
+$multi-value-height: size(2.4);
+$scrollbar-wrap-min-width: size(16);
+$option-padding: size(0.4);
+
+@mixin placeholder($color: $placeholder) {
+    &::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: $color;
+        font-size: 1em;
+    }
+
+    &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $color;
+        font-size: 1em;
+    }
+
+    &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $color;
+        font-size: 1em;
+    }
+
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: $color;
+        font-size: 1em;
+    }
+}
+
+@mixin middleLine($color) {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: $color;
+}
+
+@mixin dot($color) {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: size(0.6);
+    height: size(0.6);
+    margin: size(-0.3) 0 0 size(-0.3);
+    border-radius: size(0.3);
+    background: $color;
+}
+
+/* popper css */
+$bg: $input-bg;
+$pseudoSize: size(0.6);
+
+@mixin pseudo($bg: $border, $direction: top, $borderWidth: $pseudoSize) {
+    position: absolute;
+    #{$direction}: -$pseudoSize;
+    width: 0;
+    height: 0;
+    border: $borderWidth solid transparent;
+
+    @if ($direction==top) {
+        border-top: 0;
+        border-bottom-color: $bg;
+    } @else if ($direction==bottom) {
+        border-bottom: 0;
+        border-top-color: $bg;
+    } @else if ($direction==left) {
+        border-left: 0;
+        border-right-color: $bg;
+    } @else if ($direction==right) {
+        border-right: 0;
+        border-left-color: $bg;
+    }
+}
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}

@@ -1,0 +1,17 @@
+.aq-query-list-content {
+  position: relative;
+  .loading-mask {
+    @include flex(center);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: $main;
+    background: rgba($white, 0.5);
+
+    .react-loading {
+      width: size(30);
+    }
+  }
+}

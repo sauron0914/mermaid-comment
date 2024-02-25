@@ -1,0 +1,20 @@
+$black: #444;
+$black-light: #999;
+$black-lighter: #ccc;
+$main: $main;
+$main-hover: $main-light;
+$border: $border;
+$shadow: rgba(0, 0, 0, 0.1);
+$base-size: 10px;
+$picker-bg: #fff;
+$bg: $picker-bg;
+
+@function size($val) {
+    @return $val * $base-size;
+}
+
+$pseudoSize: size(0.6);
+$picker-width: size(30);
+$picker-item-line-height: size(3);
+$picker-item-selected-before-width: size(4);
+$picker-item-selected-before-height: size(2.4);

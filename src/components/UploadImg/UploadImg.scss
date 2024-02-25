@@ -1,0 +1,27 @@
+.upload-img {
+    position: relative;
+    line-height: size(30);
+    color: $border;
+    input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+    img {
+        object-fit: cover;
+    }
+    .no-img {
+        @include flex-column(center, center);
+        border: size(1) solid $border;
+        border-radius: size(4);
+        cursor: pointer;
+        em {
+            @include font-style(size(40), lighter);
+            font-style: normal;
+        }
+    }
+}

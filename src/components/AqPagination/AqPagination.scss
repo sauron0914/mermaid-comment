@@ -1,0 +1,69 @@
+.pagination {
+    @function p-size($val: 1) {
+        @return $val * $base-size * 10;
+    }
+
+    @include flex(center);
+    margin: p-size(2) 0 0;
+    font-size: p-size(1.4);
+    color: $font;
+    overflow: hidden;
+
+    .label {
+        height: p-size(2.8);
+        line-height: p-size(2.8);
+        user-select: none;
+        color: $font-light;
+    }
+
+    .input {
+        box-sizing: border-box;
+        height: p-size(2.8);
+        padding: 0 p-size();
+        margin: 0 p-size(2) 0 p-size();
+        border: 1px solid $border;
+        border-radius: p-size(0.3);
+        line-height: p-size(2.6);
+        color: $font;
+        outline: none;
+
+        &:focus {
+            border-color: $main;
+        }
+    }
+
+    .page-btn {
+        @include flex(center);
+        @include height(p-size(2), p-size(1.8));
+        min-width: p-size(2);
+        height: p-size(2);
+        padding: 0 p-size(0.4);
+        margin: 0 0 0 p-size(1);
+        line-height: p-size(1.8);
+        color: $font-lighter;
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: $border-radius;
+        cursor: pointer;
+        vertical-align: middle;
+        user-select: none;
+
+        &:hover {
+            color: $secondary;
+            //background: rgba($main, 0.3);
+        }
+
+        &.disabled {
+            cursor: default;
+            color: $font-lighter;
+            //background: rgba(#000, 0.1);
+            //border-color: rgba($border, 0.1);
+        }
+
+        &.active {
+            color: $secondary;
+            //background: $main;
+            border-color: $secondary;
+        }
+    }
+}

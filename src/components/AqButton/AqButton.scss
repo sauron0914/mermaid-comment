@@ -1,0 +1,88 @@
+.aq-button {
+    @include height(size(32), size(30));
+    padding: 0 size(16);
+    color: $secondary;
+    border: size(1) solid $secondary;
+    border-radius: $border-radius;
+    &:hover {
+        opacity: 0.8;
+        color: $main;
+        border-color: $main;
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+    &.btn-pending {
+        color: $secondary !important;
+        border-color: $secondary !important;
+        background: transparent !important;
+    }
+
+    &.aq-fill {
+        color: white;
+        background: $secondary;
+        &:hover {
+            border-color: $secondary;
+        }
+        &.btn-pending {
+            background: $secondary !important;
+            color: $white !important;
+        }
+        &.aq-button-red {
+            background: linear-gradient(270deg, $main 0%, $main-light 100%);
+            border-color: $main;
+            &.btn-pending {
+                background: $main !important;
+                border-color: $main !important;
+                color: $white !important;
+            }
+        }
+    }
+    &.fill-main {
+        background: $main;
+        border-color: $main;
+        &:hover {
+            border-color: $main;
+        }
+    }
+    &.rimless {
+        padding: 0;
+        color: $main;
+        border: none;
+        border-radius: 0;
+    }
+
+    .react-loading {
+        position: relative;
+        top: 0.2em;
+        width: 1.2em !important;
+    }
+}
+
+.btn-submit {
+    @include height(size(40), size(38));
+    width: 100%;
+    margin: size(40) 0 0;
+    background: linear-gradient(to right, $main, $main-light);
+    border: size(1) solid $main;
+    color: $white;
+    &:hover {
+        opacity: 0.8;
+        color: $white;
+        border-color: $main;
+        background: $main;
+    }
+    &.btn-pending {
+        background: linear-gradient(to right, $main, $main-light) !important;
+        color: $white !important;
+    }
+
+    .svg-tag {
+        width: size(24);
+        margin: 0 size(5) 0 0;
+        vertical-align: middle;
+    }
+}
+.aq-button-disable {
+    background: $bg;
+}

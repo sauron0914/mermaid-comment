@@ -1,0 +1,46 @@
+#user-set-global {
+    .overlay {
+        @include flex-column(center, center);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: $z-index-top;
+        color: $white;
+        background: rgba(#000, 0.5);
+    }
+
+    .react-loading {
+        width: size(40);
+    }
+
+    .icon-close {
+        z-index: 1;
+    }
+
+    .aq-tab {
+        @include flex-column();
+        height: 100%;
+        overflow: hidden;
+        background: rgba($white, 0.8);
+        border-radius: size(4) 0 0 size(4);
+
+        .tab-item {
+            @include height(size(50));
+            flex: none;
+            width: 100%;
+            padding: 0 $padding;
+            text-align: left;
+            &.selected {
+                color: $white;
+                background: rgba($secondary, 0.85);
+            }
+        }
+    }
+
+    .btn-sign-out {
+        margin-top: size(160);
+        color: $white;
+    }
+}

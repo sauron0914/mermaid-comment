@@ -1,0 +1,50 @@
+.overlay-hidden {
+    display: none !important;
+}
+.overlay-show {
+    .aq-button {
+        border-color: $black-lighter;
+        color: $black;
+        &.aq-fill {
+            border-color: $main;
+            background: $main;
+            color: $white;
+        }
+    }
+    .modal.confirm-modal {
+        min-width: size(384);
+        .header {
+            @include flex(center);
+            margin-top: size(8);
+            .svg-tag {
+                width: size(20);
+                height: size(20);
+                margin-right: size(12);
+            }
+        }
+        .modal-content {
+            width: size(384);
+            padding: $padding-s $padding-m $padding;
+        }
+        .footer {
+            @include flex(center);
+            padding: 0 $padding-m $padding;
+            button {
+                // @include height(size(32));
+                height: size(32);
+                letter-spacing: size(8);
+                padding: 0 size(8) 0 size(16);
+                margin: 0 size(8);
+                border-radius: size(4);
+            }
+            .btn-cancel {
+                border-color: $border;
+                color: $black;
+            }
+            .btn-ok {
+                background: $main;
+                border-color: $main;
+            }
+        }
+    }
+}

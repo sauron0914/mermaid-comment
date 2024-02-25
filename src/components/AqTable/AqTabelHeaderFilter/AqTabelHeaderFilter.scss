@@ -1,0 +1,25 @@
+.aq-table-header-filter {
+    position: relative;
+    top: size(5);
+    padding: size(10) 0 size(5);
+    .select-base {
+        @include font-style(size(13));
+        padding: 0;
+        border: none;
+    }
+}
+
+.select-options {
+    .scrollbar-container {
+        padding: size(10);
+        .option {
+            @include height(size(30));
+            margin: size(5) 0;
+            &:hover,
+            &.selected {
+                background: $secondary;
+                // color: $white;
+            }
+        }
+    }
+}

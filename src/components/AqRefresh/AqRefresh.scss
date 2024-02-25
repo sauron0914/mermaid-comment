@@ -1,0 +1,18 @@
+.icon-refresh {
+    width: size(20);
+    margin-left: size(10);
+    color: $secondary;
+    cursor: pointer;
+    &.icon-refresh-play {
+        animation: play-refresh 0.5s infinite forwards;
+    }
+}
+
+@keyframes play-refresh {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}

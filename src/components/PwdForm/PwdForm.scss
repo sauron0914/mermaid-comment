@@ -1,0 +1,16 @@
+.sign-in {
+    height: calc(100% - #{$header-height});
+
+    .form-name {
+        margin: 0 0 size(25);
+    }
+
+    .email {
+        margin: size(60) 0 0;
+    }
+}
+
+.signin-email {
+    @include flex();
+    margin-bottom: size(8);
+}
