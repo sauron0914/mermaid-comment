@@ -1,0 +1,19 @@
+.hydrogen-dashboard {
+  .border-b-0 {
+    .adm-tabs-header {
+      border-bottom: none;
+    }
+  }
+  .fill-white path {
+    fill: #fff;
+  }
+  .adm-card-header:not(:last-child) {
+    border-bottom: none;
+  }
+  &.badge-edit {
+    .adm-badge-content {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

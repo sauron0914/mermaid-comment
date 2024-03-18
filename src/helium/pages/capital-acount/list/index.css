@@ -1,0 +1,4 @@
+.adm-card-header-title{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,49 @@
+
+.notice-wap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.notice-wap .icon-xianxing_tongzhi {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  z-index: 2;
+  font-size: 12px; 
+}
+
+.notice-wap .notice-list {
+  overflow: hidden;
+  width: 100%;
+  height: inherit;
+}
+
+.notice-wap .notice-list .notice-item {
+  box-sizing: border-box;
+  padding: 0 0 0 40px;
+  width: 100%;
+  height: inherit;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.notice-radius{
+  border-radius: 8px;
+}
+
+.notice-success {
+  color: #0FB269;
+  background: #E6FFEE;
+}
+
+.notice-warring {
+  background: #FFF4E6;
+  color: #F56A07;
+}
+
+.notice-danger {
+  background: #FFEAE6;
+  color: #F10505;
+}

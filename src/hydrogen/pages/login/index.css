@@ -1,0 +1,10 @@
+.login-wrap {
+  padding: 8.4vh 8.4vw 0;
+  background: linear-gradient(#F8FFF9 10%, #fff 30%);
+}
+.login-wrap .form-login .adm-list-card{
+  margin: 0 0 16px;
+}
+.login-wrap .form-login .adm-form-footer {
+  padding: 0;
+}

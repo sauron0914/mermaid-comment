@@ -1,0 +1,121 @@
+.capital-acount-wrap {
+  min-height: 100vh;
+  background-color: #f4f5f6;
+  padding: 8px;
+  .am-button-small{
+    font-size: 14px;
+    line-height: 32px;
+    justify-content: center;
+  }
+  .tip-text{
+    position: absolute;
+    margin-top: -32px;
+    right:26px;
+    color: #b0b0b0;
+    font-size: 12px;
+  }
+  .item-withdraw{
+    background: linear-gradient(45deg,#fff 40%, #0FB2690D);
+    background: -webkit-linear-gradient(45deg,#fff 40%,#0FB2690D);
+  }
+  .item-charge{
+    background: linear-gradient(45deg,#fff 40%, #F56A070D);
+    background: -webkit-linear-gradient(45deg,#fff 40%,#F56A070D);
+  }
+  .item {
+    padding: 16px 16px 0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    .name {
+      color: #585858;
+      line-height: 22px;
+      margin-bottom: 12px;
+    }
+    > h2 {
+      color: #000;
+      font-weight: 600;
+      font-size: 28px;
+    }
+    .tips {
+      font-size: 12px;
+      color: #848484;
+      line-height: 20px;
+      margin-top: 8px;
+    }
+    .btn-wrap {
+      display: flex;
+      color: #0fb269;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 0.5px solid #E8E8E8;
+      margin-top: 20px;
+      .detail-btn {
+        display: flex;
+        flex: 1;
+        > p{
+          i {
+            margin: 0 4px;
+          }
+          &:nth-child(2){
+            margin-left: 16px;
+          }
+        }
+        .iconfont{
+          font-size: 15px;
+        }
+      }
+      .am-button {
+        border-radius: 4px;
+      }
+    }
+    &.item-charge {
+      .am-button-warning {
+        background-color: #F56A07;
+      }
+      .am-button::before{
+        border-color: #F56A07;
+      }
+      .detail-btn {
+        color: #F56A07;
+      }
+    }
+    
+  }
+  .item-phone {
+    display: flex;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    align-items: center;
+    > div,  > p {
+      flex: 1;
+      line-height: 24px;
+      &:first-child {
+        font-size: 14px;
+        color: #1e1e1e;
+      }
+      &:last-child{
+        text-align: right;
+        a {
+          color: #0fb269;
+          text-decoration: underline;
+        }
+        i {
+          color: #0fb269;
+        }
+      }
+    }
+  }
+  .help{
+    position: fixed;
+    bottom: 60px;
+    color: #0fb269;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    font-size: 14px;
+  }
+}

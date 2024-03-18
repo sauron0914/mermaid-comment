@@ -1,0 +1,16 @@
+
+.name-AUDITING {
+    background: #f56a07;
+  }
+
+  .name-AUDIT_PASS {
+    background: #0fb269;
+  }
+
+  .name-AUDIT_REFUSE {
+    background: #f10505;
+  }
+
+  .name-AUDIT_CANCEL {
+    background: #b0b0b0;
+  }

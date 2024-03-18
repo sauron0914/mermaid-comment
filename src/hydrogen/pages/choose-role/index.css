@@ -1,0 +1,57 @@
+.roles {
+  .adm-dropdown-item .adm-dropdown-item-title {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .adm-radio .adm-radio-icon {
+    display: none;
+  }
+  .adm-dropdown-nav {
+    border-bottom: none;
+  }
+  .adm-dropdown-item-title-text {
+    font-size: 16px;
+  }
+  .adm-dropdown-item-title-arrow {
+    @apply text-primary !important;
+  }
+  .picker {
+    .adm-radio-checked {
+      @apply text-primary relative !important;
+    }
+    .adm-radio-checked::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 4px;
+      width: 6px;
+      height: 12px;
+      border-bottom: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      transform: rotate(45deg);
+    }
+  }
+  .selectors {
+    .adm-list-item {
+      @apply pl-3 !important;
+    }
+    .adm-radio {
+      position: relative;
+      .adm-radio-content{
+        @apply line-clamp-2 !important;
+      }
+    }
+    .checked {
+      display: none;
+      position: absolute;
+      right: 8px;
+      top: 19px;
+    }
+    .adm-radio-checked {
+      @apply bg-primary text-white !important;
+      .checked {
+        display: block;
+      }
+    }
+  }
+}

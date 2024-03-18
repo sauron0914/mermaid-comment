@@ -1,0 +1,8 @@
+.assign-BD-checklist-border-none .adm-list-body {
+  border: none;
+ 
+}
+.assign-BD-checklist-border-none .adm-list-item-content {
+  padding-right: 0;
+  border-color: #efefef;
+}

@@ -1,0 +1,53 @@
+.dm-mul-date-picker {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 10px;
+  .icon-and-label {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-left: 4px;
+    line-height: 12px;
+  }
+  .icon-pre {
+    flex-shrink: 0;
+    color: #0FB269;
+    transform: rotate(90deg);
+  }
+  .icon-next {
+    flex-shrink: 0;
+    color: #0FB269;
+    transform: rotate(-90deg);
+  }
+  .disabled {
+    color: #B0B0B0 !important;
+  }
+  .active {
+    color: #fff !important;
+    background-color: #0fb269 !important;
+  }
+  .date-type-select {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-gap: 5px;
+    .date-type-option {
+      display: inline-block;
+      color: #666;
+      padding: 3px 8px;
+      background-color: #F2F2F2;
+      transition: all 0.3s;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  }
+  .picker-label {
+    font-size: 12px;
+    color: #0fb269
+  }
+  .week-label {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

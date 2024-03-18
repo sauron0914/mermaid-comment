@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 修改主题色 */
+:root:root {
+  --adm-color-primary: #0FB269;
+  --adm-color-success: #0FB269;
+  --adm-color-warning: #F56A07;
+  --adm-color-danger: #F10505;
+  --adm-color-message: #0073F6;
+  --adm-color-white: #FFFFFF;
+  --adm-color-text: #1E1E1E; /* 主标题 */
+  --adm-color-text-secondary: #585858; /* 正文 */
+  --adm-color-weak: #848484; /* 辅助文字 */
+  --adm-color-light: #B0B0B0;  /* 弱文案 */
+  --adm-color-border: #D9D9D9; /* 描边色 */
+  --adm-color-box: #EFEFEF; /* 背景色 */
+  --adm-color-background: #FFFFFF; /* 卡片填充 */
+  --adm-radius-xs: 2px;
+  --adm-font-size-10: 16px;
+  --adm-button-border-width: 1px;
+  --adm-button-border-radius: 4px;
+  --adm-space-s: 4px;
+  --adm-space-m: 8px;
+  --adm-space-l: 12px;
+}

@@ -1,0 +1,48 @@
+export const initPageMap = {
+  honor: [
+    '/',
+    '/configHome',
+    '/configHome-old',
+    '/configHome/homepage',
+    '/configHome/workorder-center/dashboard',
+    '/elements/hydrogen/dashboard',
+    '/hydrogen/dashboard',
+  ],
+  merak: [
+    '/merak',
+    '/merak/app',
+    '/merak/app/decision',
+    '/merak/app/decision/member-board',
+    '/merak/app/decision/decision-board',
+    '/merak/app/decision/brand-board',
+    '/merak/app/decision/shop-board',
+    '/merak/app/decision/bd-permission',
+    '/merak/app/decision/cur-permission',
+    '/merak/app/decision/permission',
+    '/merak/app/real',
+    '/merak/app/city',
+    '/merak/app/city/shop-indexs',
+    '/merak/app/city/city-model',
+  ],
+  assets: [
+    '/asset/assets',
+    '/asset/assets/board',
+    '/asset/assets/manage',
+    '/asset/assets/manage/assets-overview',
+    '/asset/assets/manage/device-efficiency',
+    '/asset/assets/manage/powerbank-efficiency',
+    '/asset/assets/manage/shop-list',
+    '/asset/assets/manage/lost-detail',
+    '/asset/assets/manage/assets-detail',
+  ],
+  approval: ['/approval-center/center-old', '/approval-center/flow'],
+  help: ['/home'],
+}
+
+export const CodeMap = {
+  '1.1.9999.1': 'honor',
+  '1.1.9999.2': 'merak',
+  '1.1.9999.3': 'assets',
+  '1.1.9999.4': 'approval',
+  '1.1.9999.5': 'help',
+}

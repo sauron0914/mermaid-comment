@@ -1,0 +1,66 @@
+.quadrant-charts::after {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #0fb269;
+  line-height: 2;
+}
+
+.quadrant-charts::before {
+  position: absolute;
+  right: -7px;
+  bottom: -5px;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-left: 5px solid #0fb269;
+}
+
+.quadrant-coord-y,
+.quadrant-coord-x {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  & > b {
+    position: absolute;
+    font-size: 10px;
+    color: #666;
+    font-weight: normal;
+  }
+}
+
+.quadrant-coord-y {
+  & > b {
+    right: 100%;
+    margin-right: 10px;
+    margin-top: -5px;
+  }
+  & > b:nth-child(1) {
+    top: 66%;
+  }
+  & > b:nth-child(2) {
+    top: 33%;
+  }
+  & > b:nth-child(3) {
+    top: 100%;
+  }
+}
+.quadrant-coord-x {
+  & > b {
+    top: 100%;
+    margin-left: -10px;
+    margin-top: 10px;
+  }
+
+  & > b:nth-child(1) {
+    left: 33%;
+  }
+  & > b:nth-child(2) {
+    left: 66%;
+  }
+}

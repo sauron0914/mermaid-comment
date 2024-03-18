@@ -1,0 +1,35 @@
+{
+  "name": "@dian/common",
+  "version": "1.0.15",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "weiran",
+  "license": "ISC",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "@dian/app-utils": "^0.28.15",
+    "@dian/bridge": "^0.1.31-beta",
+    "@dian/global-style": "^0.5.2",
+    "@dian/polyfill": "^1.4.1",
+    "@dian/ui-common": "^0.2.10",
+    "@hookform/resolvers": "^2.9.11",
+    "@tanstack/react-query": "^4.26.0",
+    "@tanstack/react-query-devtools": "^4.29.0",
+    "antd-mobile": "^5.29.0",
+    "classnames": "^2.3.1",
+    "core-js": "^3.29.1",
+    "lodash": "^4.17.21",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-helmet-async": "^1.3.0",
+    "react-hook-form": "^7.43.5",
+    "react-router-dom": "^6.10.0",
+    "react-virtualized": "^9.22.3",
+    "unstated-next": "^1.1.0",
+    "zod": "^3.21.4"
+  }
+}
